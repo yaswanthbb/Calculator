@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+}
+.bg-container{
+    background-color: #438945ba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calculator-container{
+    box-shadow:0 10px 30px rgba(37, 37, 37, 0.95);
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 5.5rem);
+    grid-template-rows: minmax(8rem, auto) repeat(5, 5.5rem);
+    gap: 10px;
+    background-color: #63a91f;
+    background-image: linear-gradient(314deg, #63a91f 0%, #1a512e 74%);
+
+}
+
+.display{
+    grid-column: 1 / -1;
+    background-color: rgb(78, 78, 78);
+    padding: 0.6rem;
+    box-shadow: inset 0 0 10px rgb(37, 37, 37);
+    border-radius: 0.6rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    font-size: 2rem;
+    transition: 0.1s ease-in-out;
+}
+.operation-container{
+    font-size: 1.5rem;
+}
+.btn{
+    background-color: rgba(255, 255 ,255, 0.05);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: #fff;
+    border: 0;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Poppins',sans-serif;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    transform: translate3d(0,-10%,0);
+    background-color: #63a91f;
+    background-image: linear-gradient(314deg, #63a91f 0%, #1a512e 74%);
+}
+.equalto{
+    grid-column: span 2;
+}
+
+.symbol:hover{
+    background-color: #118ab2;
+    background-image: linear-gradient(319deg, #118ab2 0%, #06d6a0 37%, #ffd166 100%);
+}
