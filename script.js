@@ -2,6 +2,14 @@ let num1 = 0
 let opt = '' 
 let num2 = 0
 let ans = 0
+const numbers = Array.from(document.querySelectorAll(".number"))
+const inputContainer = document.querySelector(".input-container")
+let numberInputs =''
+const allClear = document.querySelector("#ac")
+const del = document.querySelector('#del')
+const operators = Array.from(document.querySelectorAll(".operator"))
+const equalto = document.querySelector(".equalto")
+const operationContainer = document.querySelector(".operation-container")
 
 const add = (num1,num2)=>{
     ans = num1 + num2
@@ -13,7 +21,14 @@ const multi = (num1,num2)=>{
     ans = num1 * num2
 }
 const div = (num1,num2)=>{
-    ans = num1 / num2
+    if(num1 == 0 || num2 == 0){
+        console.log("Entered in If")
+        ans = "Cannot divide by zero. Please try again."
+        inputContainer.classList.add('error')
+    }
+    else{
+        ans = num1 / num2
+    }
 }
 const mod = (num1,num2)=>{
     ans = num1 % num2
@@ -28,14 +43,6 @@ const operate = (num1,num2,opt) =>{
     else console.log("Type The Correct Operator")
 }
 
-const numbers = Array.from(document.querySelectorAll(".number"))
-const inputContainer = document.querySelector(".input-container")
-let numberInputs =''
-const allClear = document.querySelector("#ac")
-const del = document.querySelector('#del')
-const operators = Array.from(document.querySelectorAll(".operator"))
-const equalto = document.querySelector(".equalto")
-const operationContainer = document.querySelector(".operation-container")
 allClear.addEventListener('click',()=>{
     inputContainer.textContent = ''
     numberInputs = ''
@@ -52,6 +59,7 @@ del.addEventListener('click',()=>{
 numbers.map(number => number.addEventListener('click',()=>{
     numberInputs = numberInputs + number.textContent
     inputContainer.textContent = numberInputs
+    inputContainer.classList.remove('error')
 }))
 
 operators.map(operator =>{
