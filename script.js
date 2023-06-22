@@ -40,12 +40,14 @@ allClear.addEventListener('click',()=>{
     inputContainer.textContent = ''
     numberInputs = ''
     ans = 0
+    operationContainer.textContent = ''
 })
 del.addEventListener('click',()=>{
-    let inputarr = Array.from(numberInputs)
-    inputarr.pop()
-    numberInputs = inputarr.toString().replace(',','')
-    inputContainer.textContent = numberInputs
+    let string = numberInputs
+    string = string.substring(0,string.length-1)
+    numberInputs = string
+    console.log(string)
+    inputContainer.textContent = string
 })
 numbers.map(number => number.addEventListener('click',()=>{
     numberInputs = numberInputs + number.textContent
