@@ -64,7 +64,7 @@ body{
     grid-column: span 2;
 }
 
-.symbol:hover{
+.operator:hover{
     background-color: #118ab2;
     background-image: linear-gradient(319deg, #118ab2 0%, #06d6a0 37%, #ffd166 100%);
 }
