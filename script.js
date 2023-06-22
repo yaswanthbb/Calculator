@@ -35,6 +35,7 @@ const allClear = document.querySelector("#ac")
 const del = document.querySelector('#del')
 const operators = Array.from(document.querySelectorAll(".operator"))
 const equalto = document.querySelector(".equalto")
+const operationContainer = document.querySelector(".operation-container")
 allClear.addEventListener('click',()=>{
     inputContainer.textContent = ''
     numberInputs = ''
@@ -56,6 +57,7 @@ operators.map(operator =>{
     num1 = Number(numberInputs)
     opt = operator.textContent
     numberInputs+=operator.textContent
+    operationContainer.textContent = numberInputs
     inputContainer.textContent = numberInputs
     numberInputs = ''
 })
@@ -65,4 +67,5 @@ equalto.addEventListener('click',()=>{
     operate(num1,num2,opt)
     inputContainer.textContent = ans
     numberInputs = ''
+    operationContainer.textContent = ''
 })
